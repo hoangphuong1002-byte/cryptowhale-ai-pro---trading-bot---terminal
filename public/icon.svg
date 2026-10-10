@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b101b"/>
+      <stop offset="100%" stop-color="#070a11"/>
+    </linearGradient>
+    <linearGradient id="whaleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="50%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="108" fill="url(#bgGrad)"/>
+  <rect width="504" height="504" x="4" y="4" rx="104" fill="none" stroke="#10b981" stroke-width="6" stroke-opacity="0.3"/>
+  <!-- Stylized Quantum Whale & Candlestick -->
+  <g transform="translate(64, 80)">
+    <!-- Candlestick bar left -->
+    <rect x="40" y="80" width="8" height="120" rx="4" fill="#10b981" opacity="0.6"/>
+    <rect x="36" y="110" width="16" height="60" rx="2" fill="#10b981"/>
+    <!-- Candlestick bar right -->
+    <rect x="340" y="50" width="8" height="140" rx="4" fill="#06b6d4" opacity="0.6"/>
+    <rect x="336" y="70" width="16" height="80" rx="2" fill="#06b6d4"/>
+    <!-- Whale Body -->
+    <path d="M 60 210 C 60 140, 150 110, 240 110 C 330 110, 370 160, 360 220 C 350 270, 290 290, 210 290 C 130 290, 60 260, 60 210 Z" fill="url(#whaleGrad)"/>
+    <!-- Whale Tail -->
+    <path d="M 60 210 C 30 180, 10 160, 0 170 C 10 200, 30 220, 10 240 C 30 230, 45 220, 60 210 Z" fill="url(#whaleGrad)"/>
+    <!-- Whale Fin -->
+    <path d="M 180 230 C 190 270, 210 285, 230 280 C 220 260, 205 240, 195 230 Z" fill="#090d16" opacity="0.4"/>
+    <!-- Eye -->
+    <circle cx="290" cy="180" r="10" fill="#ffffff"/>
+    <circle cx="292" cy="179" r="5" fill="#0b101b"/>
+    <!-- Growth trajectory line -->
+    <path d="M 50 250 Q 180 180, 340 70" fill="none" stroke="#34d399" stroke-width="8" stroke-linecap="round" stroke-dasharray="8 6"/>
+  </g>
+</svg>

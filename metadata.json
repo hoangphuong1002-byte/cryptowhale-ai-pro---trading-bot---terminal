@@ -1,0 +1,6 @@
+{
+  "name": "CryptoWhale AI Pro - Trading Bot & Terminal",
+  "description": "Automated crypto & gold market intelligence bot with real-time exchange data, whale wallet tracking, pro-trader strategy synthesis, Telegram alerts, and SL/TP automated order execution.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

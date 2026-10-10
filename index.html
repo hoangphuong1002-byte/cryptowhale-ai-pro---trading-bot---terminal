@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="vi" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>CryptoWhale AI Pro - Trading Bot & Terminal</title>
+    <meta name="description" content="Automated crypto & gold market intelligence bot with real-time exchange data, whale wallet tracking, pro-trader strategy synthesis, Telegram alerts, and SL/TP automated order execution." />
+    <meta property="og:title" content="CryptoWhale AI Pro - Trading Bot & Terminal" />
+    <meta property="og:description" content="Automated crypto & gold market intelligence bot with real-time exchange data, whale wallet tracking, pro-trader strategy synthesis, Telegram alerts, and SL/TP automated order execution." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#070a11" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="CryptoWhale" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      // Gracefully ignore HMR WebSocket errors in AI Studio iframe environment
+      window.addEventListener('error', function(event) {
+        if (event && (
+          (event.message && (event.message.indexOf('WebSocket') !== -1 || event.message.indexOf('vite') !== -1)) ||
+          (event.filename && event.filename.indexOf('@vite/client') !== -1)
+        )) {
+          event.stopImmediatePropagation();
+          event.preventDefault();
+        }
+      }, true);
+      window.addEventListener('unhandledrejection', function(event) {
+        var str = String(event.reason || '');
+        if (str.indexOf('WebSocket') !== -1 || str.indexOf('vite') !== -1) {
+          event.stopImmediatePropagation();
+          event.preventDefault();
+        }
+      });
+    </script>
+    <style>
+      /* Zero-White-Flash Hard Lock: Prevents phone browser from ever flashing white */
+      html, body {
+        background-color: #070a11 !important;
+        color: #e2e8f0;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        -webkit-tap-highlight-color: transparent;
+      }
+      #root {
+        min-height: 100vh;
+        background-color: #070a11;
+      }
+      .preboot-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 24px 16px;
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+        background: radial-gradient(circle at 50% 20%, #0d1527 0%, #070a11 100%);
+        box-sizing: border-box;
+      }
+      .preboot-card {
+        width: 100%;
+        max-width: 420px;
+        background: #0d121f;
+        border: 1px solid #1e293b;
+        border-radius: 20px;
+        padding: 24px;
+        box-shadow: 0 20px 40px -15px rgba(0,0,0,0.7);
+        text-align: center;
+      }
+      .preboot-pulse {
+        width: 56px;
+        height: 56px;
+        margin: 0 auto 16px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, rgba(6,182,212,0.2), rgba(16,185,129,0.2));
+        border: 1px solid rgba(6,182,212,0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 24px rgba(6,182,212,0.25);
+        animation: prebootPulse 1.8s infinite ease-in-out;
+      }
+      @keyframes prebootPulse {
+        0%, 100% { transform: scale(1); opacity: 0.9; }
+        50% { transform: scale(1.06); opacity: 1; box-shadow: 0 0 32px rgba(6,182,212,0.45); }
+      }
+      .preboot-bar {
+        width: 100%;
+        height: 4px;
+        background: #1e293b;
+        border-radius: 999px;
+        overflow: hidden;
+        margin: 16px 0 12px;
+      }
+      .preboot-bar-fill {
+        width: 45%;
+        height: 100%;
+        background: linear-gradient(90deg, #06b6d4, #10b981);
+        border-radius: 999px;
+        animation: prebootSlide 1.4s infinite ease-in-out;
+      }
+      @keyframes prebootSlide {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(300%); }
+      }
+      .preboot-btn {
+        margin-top: 14px;
+        padding: 8px 16px;
+        background: #1e293b;
+        color: #38bdf8;
+        border: 1px solid #334155;
+        border-radius: 10px;
+        font-size: 12px;
+        font-family: monospace;
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-block;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body class="bg-[#070a11] text-[#e2e8f0] antialiased selection:bg-emerald-500/20 selection:text-emerald-300">
+    <div id="root">
+      <!-- 0ms Instant Native Pre-Boot Shell (Prevents phone from ever turning white) -->
+      <div class="preboot-container">
+        <div class="preboot-card">
+          <div class="preboot-pulse">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+            </svg>
+          </div>
+          <div style="font-size: 17px; font-weight: 800; color: #f8fafc; letter-spacing: -0.02em;">CryptoWhale AI Pro</div>
+          <div style="font-size: 12px; color: #38bdf8; font-family: monospace; font-weight: 600; margin-top: 4px;">⚡ KHỞI ĐỘNG BẢNG QB SIÊU TỐC</div>
+          <div class="preboot-bar"><div class="preboot-bar-fill"></div></div>
+          <div style="font-size: 11px; color: #94a3b8; font-family: monospace;">Đang nạp bộ nhớ đệm cục bộ (0ms Instant)...</div>
+          <div id="preboot-recovery" style="display: none; margin-top: 14px; padding-top: 12px; border-top: 1px solid #1e293b;">
+            <div style="font-size: 11px; color: #fbbf24; margin-bottom: 8px;">Nếu điện thoại tải lâu hoặc bị kẹt:</div>
+            <button onclick="emergencyResetApp()" class="preboot-btn">
+              Khởi Động Lại QB Safe Mode
+            </button>
+          </div>
+        </div>
+      </div>
+      <script>
+        window.emergencyResetApp = function() {
+          try {
+            localStorage.clear();
+            sessionStorage.clear();
+            if ('serviceWorker' in navigator) {
+              navigator.serviceWorker.getRegistrations().then(function(regs) {
+                regs.forEach(function(r) { r.unregister(); });
+              });
+            }
+            if ('caches' in window) {
+              caches.keys().then(function(keys) {
+                keys.forEach(function(k) { caches.delete(k); });
+              });
+            }
+          } catch(e) {}
+          setTimeout(function() { location.reload(); }, 300);
+        };
+        // Show emergency self-heal button if bundle takes >3s on mobile
+        setTimeout(function() {
+          var rec = document.getElementById('preboot-recovery');
+          if (rec) rec.style.display = 'block';
+        }, 3000);
+      </script>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
